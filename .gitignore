@@ -1,0 +1,7 @@
+*.pyc
+*.txt
+!demo_plain.txt
+!demo_cipher.txt
+*.zip
+*.rar
+*~
