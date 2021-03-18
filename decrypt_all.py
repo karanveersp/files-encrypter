@@ -12,6 +12,13 @@ def main():
     cipher_dir = current_dir / "cipher"
     plain_dir = current_dir / "plain"
 
+    if not cipher_dir.is_dir():
+        os.mkdir(cipher_dir)
+        print("Created directory 'cipher' - Place cipher files in this directory before running")
+        exit(1)
+    if not plain_dir.is_dir():
+        os.mkdir(plain_dir)
+
     for cipher_file in cipher_dir.glob("*.txt"):
 
         decryption_command = f"./csencryption/csencryption.exe -key {key} -path {str(cipher_file)}"
